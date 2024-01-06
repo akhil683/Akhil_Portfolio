@@ -19,6 +19,7 @@ export default {
       'subMainText': '#d1d1d1',
       'iconBg': '#2f2f50',
       'iconbgHover': '#52527a',
+      'violet': '#c082ff',
     },
     extend: {},
   },

@@ -5,6 +5,9 @@
 .nav-hover {
   @apply duration-200 hover:bg-iconbgHover hover:scale-125 hover:text-mainText rounded-full;
 }
+.social-icon {
+  @apply p-2 cursor-pointer bg-mainBg hover:text-mainText rounded-full hover:shadow-iconbgHover shadow;
+}
 
 * {
   margin: 0;
@@ -15,6 +18,16 @@
 body {
   background-color: #1e1e32;
   color: #ffffff;
-  margin: 1rem;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+};
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #52527a;
+  border-radius: 50px;
 }
