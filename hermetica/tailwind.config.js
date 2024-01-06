@@ -10,8 +10,6 @@ export default {
       montserrat: ['Montserrat', 'sans-serif'],
       opensans: ['Open Sans', 'sans-serif'],
       popppins: ['Poppins', 'sans-serif'],
-      Roboto: ['Robot', 'sans-serif'],
-      ubuntu: ['Ubuntu', 'sans-serif'],
     },
     colors: {
       'mainBg': '#1e1e32',

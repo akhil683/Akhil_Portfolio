@@ -1,25 +1,81 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React, { lazy, Suspense } from 'react'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import { ErrorBoundary } from 'react-error-boundary'
+import ErrorFallback from './components/ErrorFallback'
 
-import About from './routes/About'
-import Activities from './routes/Activities'
+const About = lazy(() => import('./routes/About'))
+const Members = lazy(() => import('./routes/About'))
+const Activities = lazy(() => import('./routes/Activities'))
+const NoPage = lazy(() => import('./routes/NoPage'))
+const Home = lazy(() => import('./routes/Home'))
+
 import Footer from './components/Footer'
 import Header from './components/Header'
-import Home from './routes/Home'
-import Members from './routes/Members'
-import NoPage from './routes/NoPage'
 
 const App = () => {
+  const navigate = useNavigate();
 
   return (
     <div>
       <Header />
+
       <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/members' element={<Members />} />
-          <Route path='/activites' element={<Activities />} />
-          <Route path='*' element={<NoPage />} />
+        
+          <Route path='/' element={
+            <ErrorBoundary
+              FallbackComponent={ErrorFallback}
+              onReset={() => navigate('/')}
+              >
+            <Suspense fallback={<Footer />}>
+              <Home />
+            </Suspense>
+          </ErrorBoundary>} 
+          />
+
+          <Route path='/about' element={
+            <ErrorBoundary
+              FallbackComponent={ErrorFallback}
+              onReset={() => navigate('/')}
+              >
+            <Suspense fallback={<Footer />}>
+              <Home />
+            </Suspense>
+          </ErrorBoundary>} 
+          />
+
+          <Route path='/activities' element={
+            <ErrorBoundary
+              FallbackComponent={ErrorFallback}
+              onReset={() => navigate('/')}
+              >
+            <Suspense fallback={<Footer />}>
+              <Activities />
+            </Suspense>
+          </ErrorBoundary>} 
+          />
+
+          <Route path='/members' element={
+            <ErrorBoundary
+              FallbackComponent={ErrorFallback}
+              onReset={() => navigate('/')}
+              >
+            <Suspense fallback={<Footer />}>
+              <Members />
+            </Suspense>
+          </ErrorBoundary>} 
+          />
+
+          <Route path='*' element={
+            <ErrorBoundary
+              FallbackComponent={ErrorFallback}
+              onReset={() => navigate('/')}
+              >
+            <Suspense fallback={<Footer />}>
+              <NoPage />
+            </Suspense>
+          </ErrorBoundary>} 
+          />
+
       </Routes>
       <Footer />
     </div>
