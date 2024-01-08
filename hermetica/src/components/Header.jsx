@@ -33,7 +33,7 @@ const Header = () => {
 
   return (
     <>
-    <nav className='flex sm:justify-around justify-between sticky top-0 items-center bg-gradient-to-b from-mainBg to-transparent p-4 overflow-hidden'>
+    <nav className='flex sm:justify-around justify-between sticky top-0 items-center bg-gradient-to-b from-mainBg to-transparent p-4 overflow-hidden z-50'>
 
       <Link to='/'  className='bg-iconBg px-4 py-2 rounded-full duration-200 my-auto hover:bg-iconbgHover hover:scale-110'>
         <span className='sm:text-xl'>Hermetica</span>
