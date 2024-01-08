@@ -4,7 +4,7 @@ import { ErrorBoundary } from 'react-error-boundary'
 import ErrorFallback from './components/ErrorFallback'
 
 const About = lazy(() => import('./routes/About'))
-const Members = lazy(() => import('./routes/About'))
+const Members = lazy(() => import('./routes/Members'))
 const Activities = lazy(() => import('./routes/Activities'))
 const NoPage = lazy(() => import('./routes/NoPage'))
 const Home = lazy(() => import('./routes/Home'))
@@ -16,7 +16,7 @@ const App = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className='bg-gradient-to-b from-mainBg to-iconBg'>
       <Header />
 
       <Routes>
@@ -38,7 +38,7 @@ const App = () => {
               onReset={() => navigate('/')}
               >
             <Suspense fallback={<Footer />}>
-              <Home />
+              <About />
             </Suspense>
           </ErrorBoundary>} 
           />
