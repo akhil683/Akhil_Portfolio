@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import { AiFillHome } from "react-icons/ai";
-import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaGithub, FaProjectDiagram } from "react-icons/fa";
 import { IoMdInformationCircle } from "react-icons/io";
-import { MdLocalActivity, MdOutlineSupervisorAccount } from "react-icons/md";
+import { MdOutlineSupervisorAccount, MdEmojiEvents } from "react-icons/md";
 
 const MobileMenu = ({ control }) => {
 
   return (
-    <div className='sm:hidden fixed top-20 right-0 min-w-72 h-56 overflow-hidden bg-transparent z-30'>
+    <div className='sm:hidden fixed top-20 right-0 text-lg bg-violet bg-transparent z-30'>
     <motion.div
       animate={control}
-      className='min-w-48 absolute -right-48 mr-0'
+      className='min-w-56 absolute -right-56 mr-0'
     >
       <ul className='sticky bg-iconBg text-subMainText rounded-xl overflow-hidden'>
         <li className='px-4 py-2 duration-150 hover:text-mainText hover:bg-iconbgHover'>
@@ -22,8 +22,13 @@ const MobileMenu = ({ control }) => {
           </Link>
         </li>
         <li className='px-4 py-2 duration-150 hover:text-mainText hover:bg-iconbgHover'>
-          <Link to='/activities' className='flex gap-2 items-center'>
-            <MdLocalActivity />Activity
+          <Link to='/projects' className='flex gap-2 items-center'>
+            <FaProjectDiagram />Projects
+          </Link>
+        </li>
+        <li className='px-4 py-2 duration-150 hover:text-mainText hover:bg-iconbgHover'>
+          <Link to='/events' className='flex gap-2 items-center'>
+            <MdEmojiEvents />Events
           </Link>
         </li>
         <li className='px-4 py-2 duration-150 hover:text-mainText hover:bg-iconbgHover'>

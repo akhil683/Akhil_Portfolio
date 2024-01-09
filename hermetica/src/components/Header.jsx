@@ -17,17 +17,17 @@ const Header = () => {
 
     let xValue;
     if(showMenu) {
-      xValue = 220;
+      xValue = 240;
     } else {
-      xValue = -220;
+      xValue = -240;
     }
     control.start({
       x: xValue,
       transition: { 
-        duration: 0.1,
+        duration: 1,
         type: 'spring',
-        stiffness: 80,
-        damping: 10,
+        stiffness: 320,
+        damping: 25,
       }})
   }
 
@@ -44,7 +44,10 @@ const Header = () => {
           <Link to='/'>Home</Link>
         </li>
         <li className='px-4 py-2 nav-hover'>
-          <Link to='/activities'>Activity</Link>
+          <Link to='/projects'>Projects</Link>
+        </li>
+        <li className='px-4 py-2 nav-hover'>
+          <Link to='/events'>Events</Link>
         </li>
         <li className='px-4 py-2 nav-hover'>
           <Link to='/members'>Members</Link>

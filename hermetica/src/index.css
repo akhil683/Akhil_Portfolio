@@ -6,7 +6,7 @@
   @apply duration-200 hover:bg-iconbgHover hover:scale-125 hover:text-mainText rounded-full;
 }
 .social-icon {
-  @apply p-2 cursor-pointer bg-mainBg hover:text-mainText rounded-full hover:shadow-iconbgHover shadow;
+  @apply p-3 cursor-pointer hover:text-violet bg-mainBg rounded-full hover:shadow-iconbgHover shadow;
 }
 
 * {

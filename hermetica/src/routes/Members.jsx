@@ -1,7 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 import Profile from '../assets/profile.jpg';
 import MemberCard from '../components/MemberCard';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import Searchbar from '../components/Searchbar';
+
+import { IoFilter } from "react-icons/io5";
 
 const Members = () => {
   const Members = [
@@ -10,75 +14,79 @@ const Members = () => {
       name: 'Akhil',
       position: 'Executive Member',
       imageURL: Profile,
+      year: 'final'
     },
     {
       id: 2,
       name: 'Shivansh',
       position: 'Executive Member',
       imageURL: Profile,
+      year: 'third'
     },
     {
       id: 3,
       name: 'Rishu',
       position: 'Executive Member',
       imageURL: Profile,
+      year: 'second'
     },
     {
       id: 4,
       name: 'Dheeraj',
       position: 'Executive Member',
       imageURL: Profile,
+      year: 'first',
     },
   ]
-
-  const cursorSize = 20;
-  const mouse = {
-    x: useMotionValue(0),
-    y: useMotionValue(0),
-  }
-  const smoothOptions = { damping: 50, stiffness: 200, mass: 0.2 };
-  const smoothMouse = {
-    x: useSpring(mouse.x, smoothOptions),
-    y: useSpring(mouse.y, smoothOptions),
-  }
-  const manageMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    mouse.x.set(clientX - cursorSize);
-    mouse.y.set(clientY - cursorSize);
-  }
+  
+  const [filterMenu, setFilterMenu ] = useState(false);
+  const [searchField, setSearchField] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    window.addEventListener("mousemove", manageMouseMove)
-    return () => {window.removeEventListener("mousemove",manageMouseMove)}
-  });
+    const filteredData = Members.filter((data) => {
+      return data.name.toLowerCase().includes(searchField);
+    })
+    setFilteredData(filteredData);
+  }, [searchField]);
+
+  const onSearchChange = (e) => {
+    const searchFieldValue = e.target.value.toLowerCase();
+    setSearchField(searchFieldValue);
+  }
 
   return (
-    <div className='m-4'>
-      <div>
-        <div className='flex flex-wrap justify-center gap-4'>
-          {Members.map((member) => {
+    <div className='mt-4 mb-12'>
+
+      <div className='flex justify-center items-center sm:gap-4 gap-2'>
+        <Searchbar onSearchChange={onSearchChange} />
+        <div className='text-center'>
+          <div className='relative'>
+
+            <span onClick={() => setFilterMenu(!filterMenu)} className='sm:px-4 px-2 py-2 bg-iconbgHover rounded-full text-subMainText cursor-pointer'>
+              <IoFilter className='inline-block text-violet text-xl mr-2' />Filter
+              </span>
+              <div className={`absolute top-12 right-0 bg-iconbgHover w-[150px] rounded-2xl z-30 ${filterMenu ? "" : "hidden"}`}>
+                  <ul>
+                    <li className='p-2 cursor-pointer'>Final Year</li>
+                    <li className='p-2 cursor-pointer'>Third Year</li>
+                    <li className='p-2 cursor-pointer'>Second Year</li>
+                    <li className='p-2 cursor-pointer'>First Year</li>
+                  </ul>
+              </div>
+
+          </div>
+        </div>
+
+      </div>
+
+        <div className='flex flex-wrap justify-center mt-6 gap-4'>
+          {filteredData.map((member) => {
             return (
               <MemberCard member={member} key={member.id} />
             )})}
         </div>
-
-        <motion.div 
-          className='w-56 fixed mt-6 font-semibold max-sm:hidden  pointer-events-none'
-          style={{left: smoothMouse.x, top: smoothMouse.y}}
-        >
-                <div className='flex gap-4 text-center'>
-                  <div className='w-10 bg-transparent border-2 border-mainText rounded-full'></div>
-                  <p className='py-2 px-6 rounded-full bg-mainText text-mainBg'>Akhil</p>
-                </div>
-                <div className='pt-2 backdrop-blur-md mt-4 bg-iconbgHover rounded-md'>
-                    <div className='p-2 bg-iconBg rounded'>
-                      <span>Executive Member</span>
-                      <p className=' font-normal text-sm leading-tight text-subMainText text-justify'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut accusamus temporibus ratione minus? Natus sit id earum inventore commodi, repellat aliquam dicta pariatur omnis ex aut labore nesciunt consetur ut?</p>
-                    </div>
-                </div>
-              </motion.div>
       </div>
-    </div>
   )
 }
 

@@ -19,7 +19,11 @@ export default {
       'iconbgHover': '#52527a',
       'violet': '#c082ff',
     },
-    extend: {},
+    extend: {
+      animation: {
+        'pulse-fast': 'pulse 1.5s linear infinite',
+      }
+    },
   },
   plugins: [],
 }

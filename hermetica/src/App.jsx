@@ -5,9 +5,10 @@ import ErrorFallback from './components/ErrorFallback'
 
 const About = lazy(() => import('./routes/About'))
 const Members = lazy(() => import('./routes/Members'))
-const Activities = lazy(() => import('./routes/Activities'))
 const NoPage = lazy(() => import('./routes/NoPage'))
 const Home = lazy(() => import('./routes/Home'))
+const Projects = lazy(() => import('./routes/Projects'))
+const Events = lazy(() => import('./routes/Events'));
 
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -43,13 +44,24 @@ const App = () => {
           </ErrorBoundary>} 
           />
 
-          <Route path='/activities' element={
+          <Route path='/projects' element={
             <ErrorBoundary
               FallbackComponent={ErrorFallback}
               onReset={() => navigate('/')}
               >
             <Suspense fallback={<Footer />}>
-              <Activities />
+              <Projects />
+            </Suspense>
+          </ErrorBoundary>} 
+          />
+
+          <Route path='/events' element={
+            <ErrorBoundary
+              FallbackComponent={ErrorFallback}
+              onReset={() => navigate('/')}
+              >
+            <Suspense fallback={<Footer />}>
+              <Events />
             </Suspense>
           </ErrorBoundary>} 
           />
