@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import HeroImage from '../assets/HeroImage.png';
+import HeroImg from '../assets/profile.jpg';
 
 const Hero = () => {
 
@@ -30,7 +30,7 @@ const Hero = () => {
           duration: 0.4,
         }}
       >
-        <img src={HeroImage} className='w-full object-cover' alt="" />
+        <img src={HeroImg} className='w-full object-cover' alt="" />
       </motion.div>
     </div>
 
