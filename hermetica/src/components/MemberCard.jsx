@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
-
+import Img from '../assets/profile.jpg';
 import { motion, useMotionValue, useSpring, useScroll } from 'framer-motion';
 import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const MemberCard = ({ member }) => {
 
-  const {name, imageURL, position} = member;
+  const {name, Image, Position} = member;
   // const [ isHovered, setIsHovered ] = useState(false);
 
   // const MemberInfoElement = useRef(null);
@@ -52,7 +52,7 @@ const MemberCard = ({ member }) => {
 // });
 
   return (
-  <div className='flex flex-col max-sm:ful'>
+  <div className='flex flex-col max-sm:w-full'>
         <motion.div 
           // ref={ref} 
           // style={{
@@ -67,10 +67,10 @@ const MemberCard = ({ member }) => {
           </div>
           <div className='absolute left-4 -bottom-12 text-iconBg font-semibold group-hover:bottom-2 duration-500 z-20'>
             <span className='px-4 py-2 rounded-full bg-mainText duration-200 opacity-60 group-hover:opacity-100'>{name}</span>
-            <p className='px-4 py-2 mt-6 group-hover:mt-4 rounded-full bg-mainText duration-500 opacity-100 group-hover:opacity-100'>{position}</p>
+            <p className='px-4 py-2 mt-6 group-hover:mt-4 rounded-full bg-mainText duration-500 opacity-100 group-hover:opacity-100'>{Position}</p>
           </div>
           <div className='sm:w-64 w-full sm:h-72 bg-violet rounded-2xl overflow-hidden'>
-            <img className='w-full sm:h-full object-cover group-hover:scale-125 duration-500' src={imageURL} alt="" />
+            <img className='w-full sm:h-full object-cover group-hover:scale-125 duration-500' src={Img} alt="" />
           </div>
         </motion.div>
 {/* 

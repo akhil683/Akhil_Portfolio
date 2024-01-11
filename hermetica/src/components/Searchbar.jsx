@@ -3,9 +3,10 @@ import { IoMdSearch } from 'react-icons/io';
 
 const Searchbar = ({ onSearchChange }) => {
 
+
   return (
     <div>
-      <div className='text-center relative w-[300px] flex center m-auto group duration-200 hover:scale-110'>
+      <div className='text-center relative w-[280px] flex center m-auto group duration-200 hover:scale-110'>
       <IoMdSearch 
         style={{marginLeft: "1rem", marginTop: "0.5rem", position: "absolute"}}
         className=' text-violet text-2xl' 

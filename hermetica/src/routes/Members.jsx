@@ -7,48 +7,18 @@ import Searchbar from '../components/Searchbar';
 
 import { IoFilter } from "react-icons/io5";
 
-const Members = () => {
-  const Members = [
-    {
-      id: 1,
-      name: 'Akhil',
-      position: 'Executive Member',
-      imageURL: Profile,
-      year: 'final'
-    },
-    {
-      id: 2,
-      name: 'Shivansh',
-      position: 'Executive Member',
-      imageURL: Profile,
-      year: 'third'
-    },
-    {
-      id: 3,
-      name: 'Rishu',
-      position: 'Executive Member',
-      imageURL: Profile,
-      year: 'second'
-    },
-    {
-      id: 4,
-      name: 'Dheeraj',
-      position: 'Executive Member',
-      imageURL: Profile,
-      year: 'first',
-    },
-  ]
+const Members = ({ Members }) => {
   
   const [filterMenu, setFilterMenu ] = useState(false);
   const [searchField, setSearchField] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
+  const [searchFilterData, setSearchFilterData] = useState([]);
 
   useEffect(() => {
-    const filteredData = Members.filter((data) => {
+    const SearchFilterData = Members.filter((data) => {
       return data.name.toLowerCase().includes(searchField);
     })
-    setFilteredData(filteredData);
-  }, [searchField]);
+    setSearchFilterData(SearchFilterData);
+  }, [searchField ]);
 
   const onSearchChange = (e) => {
     const searchFieldValue = e.target.value.toLowerCase();
@@ -81,8 +51,8 @@ const Members = () => {
 
       </div>
 
-        <div className='flex flex-wrap justify-center mt-6 gap-4'>
-          {filteredData.map((member) => {
+        <div className='flex flex-wrap justify-center mt-6 gap-8 mx-6'>
+          {searchFilterData.map((member) => {
             return (
               <MemberCard member={member} key={member.id} />
             )})}

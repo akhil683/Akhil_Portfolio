@@ -7,13 +7,13 @@ const Home = () => {
     <>
       <Hero /> 
       
-      <div className='p-6 h-screen bg-iconBg'>
-        <h2 className='text-center text-5xl my-12 font-popppins'><span className='text-violet'>Club</span> Co-ordinators</h2>
+      <div className='p-6 pb-12 sm:h-screen bg-iconBg'>
+        <h2 className='text-center sm:text-5xl text-3xl my-12 font-popppins'><span className='text-violet'>Club</span> Co-ordinators</h2>
      
-        <div className='flex justify-around max-sm:full'>
+        <div className='flex max-sm:flex-col max-sm:gap-12 justify-around'>
           {/* Aditya Saroch Sir  */}
         <motion.div 
-          className='relative group'
+          className='relative group mx-4'
         >
           <div className='absolute left-2 bottom-12 duration-500 text-iconBg font-semibold group-hover:bottom-4'>
             <span className='px-4 py-2 rounded-full bg-mainText hover:bg-violet hover:text-mainText duration-500 opacity-0 translate-y-12 group-hover:opacity-100 group-hover:translate-y-10'>Aditya Saroch</span>
@@ -41,7 +41,7 @@ const Home = () => {
 
         {/* Nikhil Sir  */}
         <motion.div 
-          className='relative group'
+          className='relative group mx-4'
         >
           <div className='absolute left-2 bottom-12 duration-500 text-iconBg font-semibold group-hover:bottom-4'>
             <span className='px-4 py-2 rounded-full bg-mainText hover:bg-violet hover:text-mainText duration-500 opacity-0 group-hover:opacity-100'>Aditya Saroch</span>
