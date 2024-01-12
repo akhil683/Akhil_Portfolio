@@ -10,7 +10,6 @@ import { MdOutlineSupervisorAccount, MdEmojiEvents } from "react-icons/md";
 const MobileMenu = ({ control }) => {
 
   return (
-    <div className='sm:hidden fixed top-20 right-0 text-lg bg-violet bg-transparent z-30'>
     <motion.div
       animate={control}
       className='min-w-56 absolute -right-56 mr-0'
@@ -50,7 +49,6 @@ const MobileMenu = ({ control }) => {
         </li>
       </ul>
     </motion.div>
-    </div>
   )
 }
 

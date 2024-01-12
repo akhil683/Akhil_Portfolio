@@ -6,7 +6,7 @@ import HeroImg from '../assets/profile.jpg';
 const Hero = () => {
 
   return (
-  <div className='min-h-[92vh] flex  gap-6 max-sm:flex-col justify-center items-center'>
+  <div className='min-h-[92vh] flex mx-8  gap-6 max-sm:flex-col justify-center items-center'>
 
       <div className='m-6'>
         <h1 className='text-4xl md:text-6xl mb-4'>This is <span className=' text-violet'>Hermetica</span></h1>
@@ -14,7 +14,7 @@ const Hero = () => {
       </div>
 
       <motion.div 
-        className='m-6 sm:w-[400px] w-[350px] h-[400px] rounded-2xl overflow-hidden'
+        className='m-12 sm:w-[400px] w-full h-[380px] rounded-2xl overflow-hidden'
         drag
         dragConstraints={{
           right: 20,

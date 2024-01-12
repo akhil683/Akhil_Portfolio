@@ -63,8 +63,9 @@ const Header = () => {
       </div>
 
     </nav>
-    
-    <MobileMenu control={control} />
+    <div onClick={() => setShowMenu(false)} className='sm:hidden fixed top-20 right-0 text-lg bg-violet bg-transparent z-30'>
+      <MobileMenu control={control} />
+    </div>
     </>
   )
 }

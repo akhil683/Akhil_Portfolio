@@ -2,12 +2,14 @@ import React from 'react'
 import Hero from '../components/Hero'
 import CcImage from '../assets/profile.jpg';
 import { motion } from 'framer-motion'
+
 const Home = () => {
   return (
     <>
       <Hero /> 
       
       <div className='p-6 pb-12 sm:h-screen bg-iconBg'>
+      
         <h2 className='text-center sm:text-5xl text-3xl my-12 font-popppins'><span className='text-violet'>Club</span> Co-ordinators</h2>
      
         <div className='flex max-sm:flex-col max-sm:gap-12 justify-around'>

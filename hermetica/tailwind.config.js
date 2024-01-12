@@ -11,6 +11,14 @@ export default {
       opensans: ['Open Sans', 'sans-serif'],
       popppins: ['Poppins', 'sans-serif'],
     },
+    // colors: {
+    //   'mainBg': '#000',
+    //   'mainText': '#fff',
+    //   'subMainText': '#d1d1d1',
+    //   'iconBg': '#F0A500',
+    //   'iconbgHover': '#FF9F29',
+    //   'violet': '#e2b714',
+    // },
     colors: {
       'mainBg': '#1e1e32',
       'mainText': '#ffffff',

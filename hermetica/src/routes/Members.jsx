@@ -1,61 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-// commit error add
-import Profile from '../assets/profile.jpg';
+import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
+// import Profile from '../assets/profile.jpg';
 import MemberCard from '../components/MemberCard';
-import Searchbar from '../components/Searchbar';
-
-import { IoFilter } from "react-icons/io5";
 
 const Members = ({ Members }) => {
-  
-  const [filterMenu, setFilterMenu ] = useState(false);
-  const [searchField, setSearchField] = useState("");
-  const [searchFilterData, setSearchFilterData] = useState([]);
 
-  useEffect(() => {
-    const SearchFilterData = Members.filter((data) => {
-      return data.name.toLowerCase().includes(searchField);
-    })
-    setSearchFilterData(SearchFilterData);
-  }, [searchField ]);
+  const defaultMembers = Members.filter(member => member.year === "Final Year");
+  const [ filteredMembers, setFilteredMembers ] = useState(defaultMembers);
 
-  const onSearchChange = (e) => {
-    const searchFieldValue = e.target.value.toLowerCase();
-    setSearchField(searchFieldValue);
+  const handleClick = (year) => {
+    const filteredMembers = Members.filter(member => member.year === year);
+    setFilteredMembers(filteredMembers);
   }
-
+  
   return (
     <div className='mt-4 mb-12'>
 
-      <div className='flex justify-center items-center sm:gap-4 gap-2'>
-        <Searchbar 
-          onSearchChange={onSearchChange} 
-          Placeholder="Members"
-        />
-        <div className='text-center'>
-          <div className='relative'>
-
-
-            <span onClick={() => setFilterMenu(!filterMenu)} className='sm:px-4 px-2 py-2 bg-iconbgHover rounded-full text-subMainText cursor-pointer'>
-              <IoFilter className='inline-block text-violet text-xl mr-2' />Filter
-              </span>
-              <div className={`absolute top-12 right-0 bg-iconbgHover w-[150px] rounded-2xl z-30 ${filterMenu ? "" : "hidden"}`}>
-                  <ul>
-                    <li className='p-2 cursor-pointer'>Final Year</li>
-                    <li className='p-2 cursor-pointer'>Third Year</li>
-                    <li className='p-2 cursor-pointer'>Second Year</li>
-                    <li className='p-2 cursor-pointer'>First Year</li>
-                  </ul>
-              </div>
-
-          </div>
+        <div className='flex flex-wrap mx-4 -mt-16 items-center sm:gap-4 gap-2 max-sm:text-xs font-montserrat fixed z-20'>
+          <button onClick={() => handleClick("Final Year")} className='p-2 cursor-pointer bg-iconbgHover duration-200 hover:bg-violet focus:bg-violet rounded-full px-4'>Final Year</button>
+          <button onClick={() => handleClick("Third Year")} className='p-2 cursor-pointer bg-iconbgHover duration-200 hover:bg-violet focus:bg-violet rounded-full px-4'>3rd Year</button>
+          <button onClick={() => handleClick("Second Year")} className='p-2 cursor-pointer bg-iconbgHover duration-200 hover:bg-violet focus:bg-violet rounded-full px-4'>2nd Year</button>
+          <button onClick={() => handleClick("First Year")} className='p-2 cursor-pointer bg-iconbgHover duration-200 hover:bg-violet focus:bg-violet rounded-full px-4'>1st Year</button>
         </div>
 
-      </div>
-
-        <div className='flex flex-wrap justify-center mt-6 gap-8 mx-6'>
-          {searchFilterData.map((member) => {
+        <div className='flex flex-wrap justify-center mt-16 gap-8 mx-8'>
+          {filteredMembers.map((member) => {
             return (
               <MemberCard member={member} key={member.id} />
             )})}

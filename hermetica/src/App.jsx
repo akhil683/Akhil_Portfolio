@@ -1,7 +1,10 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import { ErrorBoundary } from 'react-error-boundary'
-import ErrorFallback from './components/ErrorFallback'
+import ErrorFallback from './components/ErrorFallback';
+
+import { TailSpin } from 'react-loader-spinner';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 const About = lazy(() => import('./routes/About'))
 const Members = lazy(() => import('./routes/Members'))
@@ -15,7 +18,34 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 // import Svg from './components/Svg';
 
+const Loader = () => {
+  return (
+    <div className='h-[90vh] flex justify-center items-center'>
+      <TailSpin
+      visible={true}
+      height="80"
+      width="80"
+      color="#c082ff"
+      ariaLabel="tail-spin-loading"
+      radius="2"
+      wrapperStyle={{}}
+      wrapperClass=""
+      />
+    </div>
+  )
+}
+
 const App = () => {
+
+  const [ isLoading, setIsLoading ] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+    return () => clearTimeout(timer);
+  })
+
   const navigate = useNavigate();
   const Data = {
     "Project": [
@@ -98,6 +128,24 @@ const App = () => {
           Image: "Something",
         },
         {
+          id: 5,
+          name: "Abhinav",
+          year: "Final Year",
+          Position: "Something",
+          Instagram: "Instagram",
+          LinkedIn: "linked in",
+          Image: "Something",
+        },
+        {
+          id: 6,
+          name: "Abhinav",
+          year: "Final Year",
+          Position: "Something",
+          Instagram: "Instagram",
+          LinkedIn: "linked in",
+          Image: "Something",
+        },
+        {
           id: 2,
           name: "Akhil",
           year: "Second Year",
@@ -109,7 +157,7 @@ const App = () => {
         {
           id: 3,
           name: "Aditya",
-          year: "Thrid Year",
+          year: "Third Year",
           Position: "Club Coordinator",
           Instagram: "Instagram",
           LinkedIn: "linked in",
@@ -128,12 +176,14 @@ const App = () => {
   }
   const { Project, Event, Member } = Data;
 
+  if(isLoading) {
+    return <iframe src="https://lottie.host/embed/ffd70ffd-82b2-4282-9a4a-184cbf67cf14/9MYlUbduoT.json" className='w-screen h-screen'></iframe>
+  }
+
   return (
     <div className='bg-gradient-to-b from-mainBg to-iconBg'>
+      
       <Header />
-      {/* <div className='w-screen h-screen'>
-        <Svg />
-      </div> */}
       <div className='z-30'>
 
       <Routes>
@@ -143,7 +193,7 @@ const App = () => {
             FallbackComponent={ErrorFallback}
             onReset={() => navigate('/')}
             >
-            <Suspense fallback={<Footer />}>
+            <Suspense fallback={<Loader />}>
               <Home />
             </Suspense>
           </ErrorBoundary>} 
@@ -154,7 +204,7 @@ const App = () => {
             FallbackComponent={ErrorFallback}
             onReset={() => navigate('/')}
             >
-            <Suspense fallback={<Footer />}>
+            <Suspense fallback={<Loader />}>
               <About />
             </Suspense>
           </ErrorBoundary>} 
@@ -165,7 +215,7 @@ const App = () => {
             FallbackComponent={ErrorFallback}
             onReset={() => navigate('/')}
             >
-            <Suspense fallback={<Footer />}>
+            <Suspense fallback={<Loader />}>
               <Projects Projects={Project} />
             </Suspense>
           </ErrorBoundary>} 
@@ -176,7 +226,7 @@ const App = () => {
             FallbackComponent={ErrorFallback}
             onReset={() => navigate('/')}
             >
-            <Suspense fallback={<Footer />}>
+            <Suspense fallback={<Loader />}>
               <Events Events={Event} />
             </Suspense>
           </ErrorBoundary>} 
@@ -186,7 +236,7 @@ const App = () => {
             FallbackComponent={ErrorFallback}
             onReset={() => navigate('/')}
             >
-            <Suspense fallback={<Footer />}>
+            <Suspense fallback={<Loader />}>
               <Details data={Data} />
             </Suspense>
           </ErrorBoundary>} 
@@ -197,7 +247,7 @@ const App = () => {
             FallbackComponent={ErrorFallback}
             onReset={() => navigate('/')}
             >
-            <Suspense fallback={<Footer />}>
+            <Suspense fallback={<Loader />}>
               <Members Members={Member} />
             </Suspense>
           </ErrorBoundary>} 
@@ -208,15 +258,16 @@ const App = () => {
             FallbackComponent={ErrorFallback}
             onReset={() => navigate('/')}
             >
-            <Suspense fallback={<Footer />}>
+            <Suspense fallback={<Loader />}>
               <NoPage />
             </Suspense>
           </ErrorBoundary>} 
           />
 
       </Routes>
-          </div>
-      <Footer />
+    </div>
+
+    <Footer />
     </div>
   )
 }
