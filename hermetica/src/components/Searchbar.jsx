@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoMdSearch } from 'react-icons/io';
 
-const Searchbar = ({ onSearchChange }) => {
+const Searchbar = ({ onSearchChange, Placeholder }) => {
 
 
   return (
@@ -16,7 +16,7 @@ const Searchbar = ({ onSearchChange }) => {
         type="text"  
         onChange={(e) => onSearchChange(e)}
         className=' py-2 px-12 rounded-full w-full sm:w-[350px] bg-iconbgHover outline-none border-iconbgHover border focus:border-subMainText'
-        placeholder='Search members'
+        placeholder={`Search ${Placeholder}`}
         />
         </div>
       </div>

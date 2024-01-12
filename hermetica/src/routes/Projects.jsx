@@ -23,7 +23,10 @@ const Projects = ({ Projects }) => {
 
   return (
       <div className='mb-12 mt-2'>
-        <Searchbar onSearchChange={onSearchChange} />
+        <Searchbar 
+          onSearchChange={onSearchChange} 
+          Placeholder="Project" 
+        />
         {/* <h2 className='text-center text-5xl mb-12'><span className='text-violet'>Team</span> Projects</h2> */}
         <div className='flex flex-wrap justify-center gap-6 mt-6'>
           {searchFilterData.map((project) => {

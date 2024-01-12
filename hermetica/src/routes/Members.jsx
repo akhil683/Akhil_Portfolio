@@ -29,7 +29,10 @@ const Members = ({ Members }) => {
     <div className='mt-4 mb-12'>
 
       <div className='flex justify-center items-center sm:gap-4 gap-2'>
-        <Searchbar onSearchChange={onSearchChange} />
+        <Searchbar 
+          onSearchChange={onSearchChange} 
+          Placeholder="Members"
+        />
         <div className='text-center'>
           <div className='relative'>
 

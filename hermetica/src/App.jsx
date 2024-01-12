@@ -13,6 +13,7 @@ const Details = lazy(() => import('./components/Details'));
 
 import Footer from './components/Footer'
 import Header from './components/Header'
+// import Svg from './components/Svg';
 
 const App = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const App = () => {
     "Project": [
       {
         id: 1,
-        name: "Paper from Baggase",
+        name: "asper from Baggase",
         url: "paper_from_baggase",
         proposedBy: "Akhil",
         Abstract: "ajdsfl asdjf lkasdn lkasd nlkvnasd k",
@@ -130,14 +131,18 @@ const App = () => {
   return (
     <div className='bg-gradient-to-b from-mainBg to-iconBg'>
       <Header />
+      {/* <div className='w-screen h-screen'>
+        <Svg />
+      </div> */}
+      <div className='z-30'>
 
       <Routes>
         
           <Route path='/' element={
             <ErrorBoundary
-              FallbackComponent={ErrorFallback}
-              onReset={() => navigate('/')}
-              >
+            FallbackComponent={ErrorFallback}
+            onReset={() => navigate('/')}
+            >
             <Suspense fallback={<Footer />}>
               <Home />
             </Suspense>
@@ -146,9 +151,9 @@ const App = () => {
 
           <Route path='/about' element={
             <ErrorBoundary
-              FallbackComponent={ErrorFallback}
-              onReset={() => navigate('/')}
-              >
+            FallbackComponent={ErrorFallback}
+            onReset={() => navigate('/')}
+            >
             <Suspense fallback={<Footer />}>
               <About />
             </Suspense>
@@ -157,9 +162,9 @@ const App = () => {
 
           <Route path='/projects' element={
             <ErrorBoundary
-              FallbackComponent={ErrorFallback}
-              onReset={() => navigate('/')}
-              >
+            FallbackComponent={ErrorFallback}
+            onReset={() => navigate('/')}
+            >
             <Suspense fallback={<Footer />}>
               <Projects Projects={Project} />
             </Suspense>
@@ -168,9 +173,9 @@ const App = () => {
 
           <Route path='/events' element={
             <ErrorBoundary
-              FallbackComponent={ErrorFallback}
-              onReset={() => navigate('/')}
-              >
+            FallbackComponent={ErrorFallback}
+            onReset={() => navigate('/')}
+            >
             <Suspense fallback={<Footer />}>
               <Events Events={Event} />
             </Suspense>
@@ -178,9 +183,9 @@ const App = () => {
           />
           <Route path='/projects/1' element={
             <ErrorBoundary
-              FallbackComponent={ErrorFallback}
-              onReset={() => navigate('/')}
-              >
+            FallbackComponent={ErrorFallback}
+            onReset={() => navigate('/')}
+            >
             <Suspense fallback={<Footer />}>
               <Details data={Data} />
             </Suspense>
@@ -189,9 +194,9 @@ const App = () => {
 
           <Route path='/members' element={
             <ErrorBoundary
-              FallbackComponent={ErrorFallback}
-              onReset={() => navigate('/')}
-              >
+            FallbackComponent={ErrorFallback}
+            onReset={() => navigate('/')}
+            >
             <Suspense fallback={<Footer />}>
               <Members Members={Member} />
             </Suspense>
@@ -200,9 +205,9 @@ const App = () => {
 
           <Route path='*' element={
             <ErrorBoundary
-              FallbackComponent={ErrorFallback}
-              onReset={() => navigate('/')}
-              >
+            FallbackComponent={ErrorFallback}
+            onReset={() => navigate('/')}
+            >
             <Suspense fallback={<Footer />}>
               <NoPage />
             </Suspense>
@@ -210,6 +215,7 @@ const App = () => {
           />
 
       </Routes>
+          </div>
       <Footer />
     </div>
   )

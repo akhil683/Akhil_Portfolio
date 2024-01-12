@@ -11,7 +11,7 @@ const FooterSocials = () => {
         <Link to="/">
           <h2 className='text-2xl bg-iconBg hover:bg-violet duration-200 px-4 py-2 rounded-full text-center mb-2'>Hermetica</h2>
         </Link>
-        <p className='text-subMainText'>The heart of Tech</p>
+        <p className='text-subMainText text-center'>The heart of Tech</p>
       </div>
         <ul className='flex sm:gap-4 gap-2'>
           <li className='p-3 text-xl hover:bg-iconBg rounded-full bg-iconbgHover hover:text-violet hover:shadow-iconbgHover hover:shadow-md hover:scale-125 cursor-pointer duration-100'><FaInstagram /></li>
