@@ -20,7 +20,8 @@ export default {
     //   'violet': '#e2b714',
     // },
     colors: {
-      'mainBg': '#1e1e32',
+      'mainBg': '#000',
+      // 1e1e32
       'mainText': '#ffffff',
       'subMainText': '#d1d1d1',
       'iconBg': '#2f2f50',

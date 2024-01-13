@@ -10,7 +10,7 @@ const Hero = () => {
 
       <div className='m-6'>
         <h1 className='text-4xl md:text-6xl mb-4'>This is <span className=' text-violet'>Hermetica</span></h1>
-        <p className='w-[300px] max-sm:text-sm text-subMainText'>Lorem ipsum dolor sit amet consectetur</p>
+        <p className='w-[300px] text-subMainText'>We believe in what Matters!</p>
       </div>
 
       <motion.div 

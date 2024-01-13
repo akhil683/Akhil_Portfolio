@@ -176,12 +176,12 @@ const App = () => {
   }
   const { Project, Event, Member } = Data;
 
-  if(isLoading) {
-    return <iframe src="https://lottie.host/embed/ffd70ffd-82b2-4282-9a4a-184cbf67cf14/9MYlUbduoT.json" className='w-screen h-screen'></iframe>
-  }
+  // if(isLoading) {
+  //   return <iframe src="https://lottie.host/embed/ffd70ffd-82b2-4282-9a4a-184cbf67cf14/9MYlUbduoT.json" className='w-screen h-screen'></iframe>
+  // }
 
   return (
-    <div className='bg-gradient-to-b from-mainBg to-iconBg'>
+    <div className=' bg-mainBg'>
       
       <Header />
       <div className='z-30'>

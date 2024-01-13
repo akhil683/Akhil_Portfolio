@@ -6,11 +6,11 @@ import ProjectImg from '../assets/profile.jpg';
 const Card = ({ data }) => {
 
   return (
-    <Link to='/' className='rounded-2xl h-[363px] overflow-hidden'>
-      <div className='w-[300px] h-[320px]'>
-        <img src={ProjectImg} alt="" className='h-full w-full object-cover' />
+    <Link to='/'>
+      <div className='w-[320px] h-[320px] p-4 hover:bg-subMainText rounded-full overflow-hidden'>
+        <img src={ProjectImg} alt="" className='relative h-full w-full object-cover rounded-full scale-125 hover:scale-100 duration-500' />
       </div>
-      <h4 className='bg-violet text-xl text-center py-2 uppercase'>{data.name}</h4>
+      <h4 className='text-xl text-center mt-4 py-2 uppercase'>{data.name}</h4>
     </Link>
   )
 }

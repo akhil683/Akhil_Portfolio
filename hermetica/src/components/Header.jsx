@@ -17,17 +17,17 @@ const Header = () => {
 
     let xValue;
     if(showMenu) {
-      xValue = 240;
+      xValue = 320;
     } else {
-      xValue = -240;
+      xValue = -320;
     }
     control.start({
       x: xValue,
       transition: { 
         duration: 1,
         type: 'spring',
-        stiffness: 320,
-        damping: 25,
+        stiffness: 560,
+        damping: 30,
       }})
   }
 
@@ -63,7 +63,7 @@ const Header = () => {
       </div>
 
     </nav>
-    <div onClick={() => setShowMenu(false)} className='sm:hidden fixed top-20 right-0 text-lg bg-violet bg-transparent z-30'>
+    <div onClick={toggleMenu} className='sm:hidden fixed top-20 right-0 text-lg bg-violet bg-transparent z-30'>
       <MobileMenu control={control} />
     </div>
     </>

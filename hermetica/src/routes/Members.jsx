@@ -23,7 +23,7 @@ const Members = ({ Members }) => {
           <button onClick={() => handleClick("First Year")} className='p-2 cursor-pointer bg-iconbgHover duration-200 hover:bg-violet focus:bg-violet rounded-full px-4'>1st Year</button>
         </div>
 
-        <div className='flex flex-wrap justify-center mt-16 gap-8 mx-8'>
+        <div className='flex flex-wrap justify-center mt-16 gap-4 mx-8'>
           {filteredMembers.map((member) => {
             return (
               <MemberCard member={member} key={member.id} />
