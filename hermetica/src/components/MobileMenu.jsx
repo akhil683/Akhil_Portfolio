@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { AiFillHome } from "react-icons/ai";
 import { FaInstagram, FaLinkedinIn, FaGithub, FaProjectDiagram, FaYoutube } from "react-icons/fa";
 import { IoMdInformationCircle } from "react-icons/io";
-import { MdOutlineSupervisorAccount, MdEmojiEvents } from "react-icons/md";
+import { MdOutlineSupervisorAccount, MdEmojiEvents, MdPhotoSizeSelectActual } from "react-icons/md";
 
 const MobileMenu = ({ control }) => {
 
@@ -36,6 +36,11 @@ const MobileMenu = ({ control }) => {
           </Link>
         </li>
         <li className='px-4 py-3 duration-150 hover:text-mainText hover:bg-iconbgHover'>
+          <Link to='/gallery' className='flex gap-2 items-center'>
+            <MdPhotoSizeSelectActual /> Gallery
+          </Link>
+        </li>
+        <li className='px-4 py-3 duration-150 hover:text-mainText hover:bg-iconbgHover'>
           <Link to='/about' className='flex gap-2 items-center'>
             <IoMdInformationCircle />About
           </Link>
@@ -45,7 +50,7 @@ const MobileMenu = ({ control }) => {
         <li className='px-4 pt-2 pb-4 flex justify-around text-xl'>
           <span className='social-icon'><FaLinkedinIn className='text-2xl' /></span>
           <span className='social-icon'><FaInstagram className='text-2xl' /></span>
-          <span className='social-icon'><FaGithub className='text-2xl' /></span>
+          {/* <span className='social-icon'><FaGithub className='text-2xl' /></span> */}
           <span className='social-icon'><FaYoutube className='text-2xl' /></span>
         </li>
       </ul>

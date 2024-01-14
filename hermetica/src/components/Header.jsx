@@ -53,6 +53,9 @@ const Header = () => {
           <Link to='/members'>Members</Link>
         </li>
         <li className='px-4 py-2 nav-hover'>
+          <Link to='/gallery'>Gallery</Link>
+        </li>
+        <li className='px-4 py-2 nav-hover'>
           <Link to='/about'>About</Link>
         </li>
       </ul>
@@ -63,7 +66,7 @@ const Header = () => {
       </div>
 
     </nav>
-    <div onClick={toggleMenu} className='sm:hidden fixed top-20 right-0 text-lg bg-violet bg-transparent z-30'>
+    <div onClick={toggleMenu} className='sm:hidden fixed top-18 right-0 text-lg z-40'>
       <MobileMenu control={control} />
     </div>
     </>

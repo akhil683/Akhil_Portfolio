@@ -16,6 +16,7 @@ const Details = lazy(() => import('./components/Details'));
 
 import Footer from './components/Footer'
 import Header from './components/Header'
+import Gallery from './routes/Gallery';
 // import Svg from './components/Svg';
 
 const Loader = () => {
@@ -249,6 +250,17 @@ const App = () => {
             >
             <Suspense fallback={<Loader />}>
               <Members Members={Member} />
+            </Suspense>
+          </ErrorBoundary>} 
+          />
+          
+          <Route path='/gallery' element={
+            <ErrorBoundary
+            FallbackComponent={ErrorFallback}
+            onReset={() => navigate('/')}
+            >
+            <Suspense fallback={<Loader />}>
+              <Gallery />
             </Suspense>
           </ErrorBoundary>} 
           />

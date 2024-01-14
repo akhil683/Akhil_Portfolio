@@ -26,7 +26,7 @@ const Home = () => {
           </div>
         </motion.div>
 
-        {/* <motion.div 
+        <motion.div 
           className='w-56 mt-6 fixed font-semibold max-sm:hidden'
         >
           <div className='flex gap-4 text-center'>
@@ -39,7 +39,7 @@ const Home = () => {
                 <p className=' font-normal text-sm leading-tight text-subMainText text-justify'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut accusamus temporibus ratione minus? Natus sit id earum inventore commodi, repellat aliquam dicta pariatur omnis ex aut labore nesciunt consetur ut?</p>
               </div>
           </div>
-        </motion.div> */}
+        </motion.div>
 
         {/* Nikhil Sir  */}
         <motion.div 
@@ -53,7 +53,7 @@ const Home = () => {
             <img className='w-full sm:h-full object-cover' src={CcImage} alt="" />
           </div>
         </motion.div>
-        {/* <motion.div 
+        <motion.div 
           className='w-56 mt-6 fixed font-semibold max-sm:hidden'
         >
           <div className='flex gap-4 text-center'>
@@ -66,7 +66,7 @@ const Home = () => {
                 <p className=' font-normal text-sm leading-tight text-subMainText text-justify'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut accusamus temporibus ratione minus? Natus sit id earum inventore commodi, repellat aliquam dicta pariatur omnis ex aut labore nesciunt consetur ut?</p>
               </div>
           </div>
-        </motion.div> */}
+        </motion.div>
       </div>
       </div>
     </>
