@@ -4,7 +4,7 @@ import { ErrorBoundary } from 'react-error-boundary'
 import ErrorFallback from './components/ErrorFallback';
 
 import { TailSpin } from 'react-loader-spinner';
-import { Player } from '@lottiefiles/react-lottie-player';
+// import { Player } from '@lottiefiles/react-lottie-player';
 
 const About = lazy(() => import('./routes/About'))
 const Members = lazy(() => import('./routes/Members'))
@@ -232,13 +232,24 @@ const App = () => {
             </Suspense>
           </ErrorBoundary>} 
           />
-          <Route path='/projects/1' element={
+
+          <Route path='/projects/:url' element={
             <ErrorBoundary
             FallbackComponent={ErrorFallback}
             onReset={() => navigate('/')}
             >
             <Suspense fallback={<Loader />}>
-              <Details data={Data} />
+              <Details data={Project} />
+            </Suspense>
+          </ErrorBoundary>} 
+          />
+          <Route path='/events/:url' element={
+            <ErrorBoundary
+            FallbackComponent={ErrorFallback}
+            onReset={() => navigate('/')}
+            >
+            <Suspense fallback={<Loader />}>
+              <Details data={Event} />
             </Suspense>
           </ErrorBoundary>} 
           />

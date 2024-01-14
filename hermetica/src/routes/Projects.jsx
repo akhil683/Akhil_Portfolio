@@ -31,7 +31,7 @@ const Projects = ({ Projects }) => {
         <div className='flex flex-wrap justify-center gap-6 mt-6'>
           {searchFilterData.map((project) => {
             return (
-            <Card data={project} key={project.id} />
+            <Card data={project} name="projects" key={project.id} />
             )})}
         </div>
         <div className='flex flex-wrap justify-center gap-6'>

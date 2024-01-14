@@ -31,7 +31,7 @@ const Events = ({ Events }) => {
         <div className='flex flex-wrap justify-center gap-6 mt-6'>
           {searchFilterData.map((event) => {
             return (
-              <Card data={event} key={event.id} />
+              <Card data={event} name="events" key={event.id} />
               )})}
         </div>
         <div className='flex flex-wrap justify-center gap-6'>
