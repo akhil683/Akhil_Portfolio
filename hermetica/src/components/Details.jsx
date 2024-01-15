@@ -1,11 +1,11 @@
 import React from 'react';
 import Img from '../assets/profile.jpg';
 import { useParams } from 'react-router-dom';
+import ReactStars from 'react-stars';
 
 const Details = ({ data }) => {
   const { url } = useParams();
   const dataDetail = data.find(data => data.url === url);
-  console.log(dataDetail);
   const { name, proposedBy, Abstract, image } = dataDetail;
 
   return (
@@ -22,22 +22,88 @@ const Details = ({ data }) => {
           </p>
         </div>
       </div>
-      <div className='my-16 p-16 justify-center items-center bg-iconbgHover flex flex-col gap-16'>
-      <form className='flex flex-col w-[600px] gap-4 mx-6 text-iconBg'>
-        <input className=' rounded-md py-2 px-4 outline-none' type="text" placeholder='Your Name' />
-        <input className=' rounded-md py-2 px-4 outline-none' type="text" placeholder='Suggestions' />
+
+      <div className='my-12 py-6 text-center'>
+      <form className='flex flex-col mx-4 sm:mx-auto max-w-[600px] gap-4 text-iconBg'>
+        <ReactStars 
+          count={5}
+          value={0}
+          // onChange={}
+          color1='#ffd700'
+          // color2=''
+          size={50}
+          half={true}
+          edit={true}
+        />
+        <input className=' rounded-md w-full py-2 px-4 outline-none' type="text" placeholder='Your Name' />
+        <input className=' rounded-md w-full py-2 px-4 outline-none' type="text" placeholder='Suggestions' />
         <button className=' bg-violet py-2 text-mainText text-xl rounded-md' type='submit'>SUBMIT</button>
       </form>
-      <div>
-        <div>
-          <div>
-            <h4>Akhil</h4>
-            <p>12:05 PM</p>
+      </div>
+
+      <div className='mx-4'>
+        <h2 className='max-w-[600px] mx-auto text-3xl mb-4'>Reviews</h2>
+
+          <div className='p-4 bg-iconbgHover rounded-xl mb-4 mx-auto max-w-[600px]'>
+            <div className='flex justify-between items-center'>
+              <ReactStars 
+                count={5}
+                value={0}
+                
+                // onChange={}
+                color1='#ffd700'
+                // color2=''
+                size={25}
+                half={true}
+                edit={false}
+                />
+              <p className='mr-4 text-subMainText'>12:05 PM</p>
+            </div>
+            <h4 className='text-xl mb-2'>Akhil Palsra</h4>
+            <p className='text-subMainText'>A really good project for environment</p>
           </div>
-          <p>A really good project for environment</p>
+
+          <div className='p-4 bg-iconbgHover rounded-xl mb-4  mx-auto max-w-[600px]'>
+            <div className='flex justify-between items-center'>
+              <ReactStars 
+                count={5}
+                value={0}
+                
+                // onChange={}
+                color1='#ffd700'
+                // color2=''
+                size={25}
+                half={true}
+                edit={false}
+                className='mr-6'
+                />
+              <p className='mr-4 text-subMainText'>12:05 PM</p>
+            </div>
+            <h4 className='text-xl mb-2'>Akhil Palsra</h4>
+            <p className='text-subMainText'>A really good project for environment</p>
+          </div>
+
+          <div className='p-4 bg-iconbgHover rounded-xl  mx-auto max-w-[600px]'>
+            <div className='flex justify-between items-center'>
+              <ReactStars 
+                count={5}
+                value={0}
+                
+                // onChange={}
+                color1='#ffd700'
+                // color2=''
+                size={25}
+                half={true}
+                edit={false}
+                className='mr-6'
+                />
+              <p className='mr-4 text-subMainText'>12:05 PM</p>
+            </div>
+            <h4 className='text-xl mb-2'>Akhil Palsra</h4>
+            <p className='text-subMainText'>A really good project for environment</p>
+          </div>
+
         </div>
-      </div>
-      </div>
     </div>
   )
 }
